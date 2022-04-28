@@ -1,0 +1,191 @@
+---
+title: Release Notes for AppDynamics Platform Monitoring for VMware Tanzu
+owner: Partners
+---
+
+## <a id='50477'></a> 5.0.477
+
+**Release Date:** April 13, 2022
+
+- Updated Python runtime of dashboard generator to 3.7.x
+
+## <a id='47336'></a> 4.7.336
+
+**Release Date:** June 3, 2021
+
+- Patch Release on top of 4.7.334.
+- Tile now also works with 2.8, 2.9, 2.10, 2.11 versions as they now continue to support v1 nozzle apis.
+
+## <a id='50463'></a> 5.0.463
+
+**Release Date:** Feb 19, 2021
+
+- Performance upgrades for container metrics
+- Nozzle will derive container metadata from metric envelope tags if present instead of using CAPI
+
+## <a id='50457'></a> 5.0.457
+
+**Release Date:** Aug 18, 2020
+
+- Performance upgrades based on recommendations from Tanzu team. Please refer this [kb article](https://community.pivotal.io/s/article/Consuming-logs-metrics-via-the-RLP-Gateway-V2-Firehose-API-will-show-reduced-performance?language=en_US)
+- Nozzle now uses grpc
+- Added optional fields in the tile configuration to override rlp gateway address and shard id
+
+## <a id='50436'></a> 5.0.436
+
+**Release Date:** Jul 21, 2020
+
+- Added tile configuration options to set 
+  * Nozzle logging level. (AppDynaimcs Default Configuration > AppDynamics Nozzle Log Level) (Default: Info)
+  * Enable Container CAPI Meta Data Cache Clear (AppDynamics Advanced Metrics > Periodic Clearing of Nozzle Cache)
+  * Cache Clear Interval (AppDynamics Advanced Metrics > Nozzle Cache clearing Interval (in Minutes)) (Default: 1440)
+
+- Note: Enabling CAPI Meta Data Cache Clearing will increase load on CAPI. Please enable it only if it required.
+
+## <a id='50425'></a> 5.0.425
+
+**Release Date:** May 20, 2020
+
+- Fixed issue with reporting `Cumulative|rep.UnhealthyCell` metric not being reported in newer versions. 
+
+## <a id='50417'></a> 5.0.417
+
+**Release Date:** April 14, 2020
+
+- Added clean up post install jobs to remove orphaned 4.x installed containers
+- Fixed Proxy parsing 
+
+## <a id='50402'></a> 5.0.402
+
+**Release Date:** February 19, 2020
+
+- Maintenance Release
+- Adds retry mechanism in connection disconnects in heavy load 
+
+
+## <a id='50369'></a> 5.0.396
+
+**Release Date:** January 24, 2020
+
+- Major Release - 5.0.x line of tiles
+- Performance updates
+- Works only with >=2.6 TAS environments
+- The Nozzle uses new v2 HTTP-based APIs to collect metrics. This replaces the old websocket-based communication to the loggregator.
+
+
+## <a id='47334'></a> 4.7.334
+
+**Release Date:** December 13, 2019
+
+- Maintenance Release
+- Fixed issue with expired token in retries
+
+## <a id='47273'></a> 4.7.273
+
+**Release Date:** October 23, 2019
+
+- Maintenance Release
+- Removed GOVERSION to allow future TAS upgrades
+- Improvements to nozzle websocket error handling
+
+## <a id='47249'></a> 4.7.249
+
+**Release Date:** August 22, 2019
+
+- Maintenance Release
+- Updated GOVERSION to 1.11 to support TAS v4.5.8+
+- Dashboard improvements to address changing metric paths between TAS upgrades
+
+<p class="note"><strong>Note:</strong>
+
+- This tile now requires Go 1.11+ which is available in go_buildpack 1.8.27 and later. If you are using TAS v2.2.6 or lower you will have to install a more up-to-date go_buildpack manually.
+- Due to dashboard changes, existing dashboards and health rules must be deleted before upgrading to this tile version.
+
+</p>
+
+## <a id='47241'></a> 4.7.241
+
+**Release Date:** July 26, 2019
+
+- Maintenance Release
+- Dashboard Improvements
+
+
+## <a id='47239'></a> 4.7.239
+
+**Release Date:** July 17, 2019
+
+- (Beta) Application - Container/Server Correlation
+
+## <a id='47217'></a> 4.7.217
+
+**Release Date:** July 1st, 2019
+
+- Improvised logging
+- Updated cf-cli
+
+
+## <a id='46135'></a> 4.6.135
+
+**Release Date:** June 10, 2019
+
+- Websocket retry errors are now treated as unrecoverable errors
+
+
+## <a id='46105'></a> 4.6.105
+
+**Release Date:** April 23, 2019
+
+- Addresses changes to "rep" metrics deployment names introduced in PCF v2.4
+
+
+## <a id='46103'></a> 4.6.103
+
+**Release Date:** March 27, 2019
+
+- Major release
+- Includes significant performance improvements.
+- AppDynamics Nozzle can now be scaled to any number of instances.
+- Multi-Foundation Dashboard support.
+- Advanced metric collection support to collect custom metrics that are not in the standard KPI list.
+- Starting with 4.6 version the default AppDynamics Nozzle Application Name has been changed to **appd-nozzle-v2** and a new dashboard with name **appd-nozzle-v2-<{cf system domain}>-PCF KPI Dashboard**
+will be created.
+
+## <a id='45605'></a> 4.5.605
+
+**Release Date:** February 4, 2019
+
+- Maintenance release
+- Updated tile to use Xenial stemcell
+
+## <a id='45555'></a> v4.5.555
+
+**Release Date:** December 6, 2018
+
+- Maintenance release
+- Changes the layout of the Dashboard UI
+
+## <a id='45522'></a> v4.5.522
+
+**Release Date:** November 7, 2018
+
+- Maintenance release
+
+## <a id='45480'></a> v4.5.480
+
+**Release Date:** October 10, 2018
+
+##### Features
+
+- Maintenance release
+- Optimized configuration
+
+## <a id='45460'></a> v4.5.460
+
+**Release Date:** September 11, 2018
+
+##### Features
+
+- First release
+- AppDynamics Firehose Nozzle to collect the metrics
+- AppDynamics Dashboard Application to automatically create health rules and custom dashboard.

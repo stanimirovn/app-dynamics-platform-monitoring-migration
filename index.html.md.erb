@@ -1,0 +1,70 @@
+---
+title: AppDynamics Platform Monitoring for VMware Tanzu
+owner: Partners
+---
+
+## <a id='overview'></a> Overview
+
+[AppDynamics Platform Monitoring for VMware Tanzu (VMware Tanzu)](https://network.pivotal.io/products/appdynamics-platform/)
+provides visibility into the VMware Tanzu platform where your AppDynamics-monitored applications are deployed.
+The tile deploys a Firehose Nozzle that collects various KPI metrics and publishes them to a controller.
+It also deploys a Dashboard App that automatically creates KPI health rules and custom dashboards associated
+with the health rules, which can be used to monitor the health and capacity of one or more VMware Tanzu foundations.
+
+## <a id='product-snapshot'></a> Product Snapshot
+
+<table class="nice">
+    <th>Element</th>
+    <th>Details</th>
+    <tr>
+        <td>Version</td>
+        <td>5.0.463</td>
+    </tr>
+    <tr>
+        <td>Release date</td>
+        <td>April 13, 2022</td>
+    </tr>
+    <tr>
+        <td>VMware Tanzu Operations Manager </td>
+        <td>v2.7x, v2.8.x, v2.9.x, v2.10.x </td>
+    </tr>
+    <tr>
+        <td>Tanzu Application Service</td>
+        <td>v2.7.x, v2.8.x, v2.9.x, v2.10.x, v2.11.x, v2.12.x, v2.13.x</td>
+    </tr>
+    <tr>
+       <td>BOSH stemcell version</td>
+       <td>Ubuntu Xenial</td>
+    </tr>
+    <tr>
+        <td>IaaS support</td>
+        <td>AWS, Azure, GCP, OpenStack, and vSphere</td>
+    </tr>
+    <tr>
+        <td>AppDynamics Controller Version</td>
+        <td>4.4.x or later</td>
+    </tr>
+</table>
+
+
+
+<p class="note warning">
+<strong>WARNING:</strong>
+When upgrading from a 4.x tile to 5.x tile, there are new tile fields under <strong>AppDynamics Nozzle Configuration</strong>. These new 5.x tile fields must be completed before the upgrade can be performed. These 5.x tiles fields enable the authentication for HTTP-based communication with the loggregator.
+For more details please see the <a href="https://docs.pivotal.io/partners/appdynamics-platform/installing.html">installation instructions</a>.
+</p>
+
+
+### <a id="reqs"></a> Requirements
+
+* AppDynamics Controller v4.4.x or later
+* An AppDynamics account with Go SDK Agent License
+* VMware Tanzu v2.7x, v2.8.x, v2.9.x, v2.10.x, v2.11.x, v2.12.x
+
+### <a id="feedback"></a> Feedback
+
+Please provide any bugs, feature requests, or questions to the [VMware Tanzu Feedback list](mailto:pivotal-cf-feedback@pivotal.io).
+
+### <a id='license'></a> License
+
+Users interested in AppDynamics can sign up for a [free trial license](https://portal.appdynamics.com/account/signup/signupForm).
